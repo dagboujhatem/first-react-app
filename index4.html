@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Title -->
+    <title>Let's Learn React JS</title>
+</head>
+
+<body>
+
+    <!-- Designed location to insert react content -->
+    <div id="root" class="container-fuild">
+        React has not rendred yet!
+    </div>
+    <!-- Bootstrap bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <!-- React library -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!-- React DOM library -->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- JSX script here -->
+    <script type="text/babel">
+        class App extends React.Component {
+            render() {
+                return (
+                    // <div>
+                    //     <h1 className="text-center text-primary my-5">Welcome react!</h1>
+                    // </div>
+
+                    // You can create DOM element with Babel (directement)
+                    // Use React.createElement function with 3 arguments
+                    // 1 arg : string of tag name 
+                    // 2 arg : object attribute or null if this element don't have any attributes
+                    // 3 arg : the child element or content 
+                    React.createElement("div", {
+                        className: "container"
+                    }, /*#__PURE__*/React.createElement("h1", {
+                        className: "text-primary"
+                    }, "hello"), /*#__PURE__*/React.createElement("div", {
+                        className: "form-group"
+                    }, /*#__PURE__*/React.createElement("label", null, "name : "), /*#__PURE__*/React.createElement("input", {
+                        id: "fullname",
+                        name: "fullname",
+                        type: "text",
+                        placeholder: "Type your full name here ..."
+                    })))
+                );
+            }
+        }
+        ReactDOM.render(
+            <App />, // React What? (JSX code here)
+            document.getElementById('root') // React Where? (DOM element here)
+        );
+    </script>
+</body>
+
+</html>
